@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rockpaerscissors</title>
+</head>
+<body>
+    <p>
+        rock paper scissors games
+    </p>
+    <button onclick="
+     playgame('rock');
+    
+    ">
+        rock
+    </button>
+    <button onclick="
+    const computerMove = pickComputerMove();
+
+
+    
+
+    let result = '';
+
+    if(computerMove === 'rock'){
+        result = 'you win';
+    }else if (computerMove === 'paper'){
+        result = 'tie';
+    }else {
+        result = 'you lose';
+    }
+
+
+    alert(`you picked paper. computer picked ${computerMove}.${result}`);
+        
+    
+    ">
+        paper
+    </button>
+    <button onclick="
+    playgame(' scissors');
+    ">
+        scissors
+    </button>
+    <script>
+        function playgame(playerMove){
+            const computerMove = pickComputerMove();
+
+   
+
+    
+
+    let result = '';
+     if (playerMove === ' scissors'){
+        if(computerMove === 'rock'){
+        result = 'you lose';
+    }else if (computerMove === 'paper'){
+        result = 'you won';
+    }else {
+        result = 'tie'
+    }
+     } else if (playerMove === rock){
+       
+    if(computerMove === 'rock'){
+        result = 'tie';
+    }else if (computerMove === 'paper'){
+        result = 'you lose';
+    } else {
+        result = 'you win';
+    }
+
+
+    
+   
+
+
+    alert(`you picked ${playerMove}. computer picked ${computerMove}.${result}`);
+        
+    
+
+        }
+      
+        //we write the code outside because of scope of the function which make it exist only in the {}
+        function pickComputerMove() {
+            let computerMove = ' ' ;
+            const randomNumber = Math.random();
+    //computerMove is used to save the computerMove and campare with our move
+    
+            if (randomNumber >= 0 && randomNumber <1  / 3){
+        computerMove='rock';
+    }
+    else if (randomNumber >= 1 / 3 && randomNumber <2/ 3){
+        computerMove='paper';
+    }
+    else {
+          computerMove='scissors';
+    }
+            return computerMove;
+        }
+    </script>
+</body>
+
+</html>
